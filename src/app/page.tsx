@@ -106,7 +106,7 @@ export default function Home() {
                   {aiStatus}
                 </button>
                 <br />
-                <pre>{aiRes}</pre>
+                <pre className="border border-black m-4 p-4">{aiRes}</pre>
                 <tr className="border border-grey-500 md:border-none block md:table-row absolute -top-full md:top-auto -left-full md:left-auto md:relative">
                   <th className="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
                     Gender
