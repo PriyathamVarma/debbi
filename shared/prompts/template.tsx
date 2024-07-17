@@ -264,8 +264,10 @@ This means that when using the median, women at Acme Ltd receive 3.3% less bonus
 
 Task: Calculate the gender pay gap from the data provided
 
-Extra Task: Give the response in terms of suggestions. Just give me in terms of numbers. Give me atleast 5 major points.
+Extra Task: Give the response in terms of json object with numbers. Just give me in terms of numbers. Give me atleast 5 major points. Strictly follow the sample response format.
 
-Sample response: From the data males are getting 1.2% more than the females.
+Sample response: {sample}
+
+
 
     `;

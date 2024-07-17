@@ -62,6 +62,27 @@ export async function POST(req: NextRequest, res: NextResponse) {
       records: record.fields,
     }));
     console.log("check point 3", data);
+    const sample = JSON.stringify(`
+{
+  "gender_pay_gap": {
+    "hourly_pay": {
+      "mean": 13.59,
+      "median": 6.67,
+      "disparity": "Men earning more than women"
+    },
+    "bonus_pay": {
+      "mean": 9.7,
+      "median": 3.3,
+      "disparity": "Men receiving more in bonus pay than women"
+    },
+    "bonus_distribution": {
+      "men": 94.5,
+      "women": 64.0,
+      "disparity": "Men receiving bonus pay more frequently than women"
+    }
+  }
+}
+`);
     return NextResponse.json<ResponseData>({
       //message: "Airtable data fetched",
       data: data,

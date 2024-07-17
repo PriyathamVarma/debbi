@@ -22,8 +22,31 @@ export async function GET() {
 
     const chain = prompt.pipe(model);
 
+    const sample = JSON.stringify(`
+{
+  "gender_pay_gap": {
+    "hourly_pay": {
+      "mean": 13.59,
+      "median": 6.67,
+      "disparity": "Men earning more than women"
+    },
+    "bonus_pay": {
+      "mean": 9.7,
+      "median": 3.3,
+      "disparity": "Men receiving more in bonus pay than women"
+    },
+    "bonus_distribution": {
+      "men": 94.5,
+      "women": 64.0,
+      "disparity": "Men receiving bonus pay more frequently than women"
+    }
+  }
+}
+`);
+
     const result = await chain.invoke({
       data: data as string,
+      sample: sample as string,
     });
 
     // Format the received content
@@ -49,6 +72,27 @@ export async function POST(req: NextRequest, res: NextResponse) {
     console.log("Check point 1");
     const data: any = await req.json();
     console.log("Check point 2");
+    const sample = JSON.stringify(`
+{
+  "gender_pay_gap": {
+    "hourly_pay": {
+      "mean": 13.59,
+      "median": 6.67,
+      "disparity": "Men earning more than women"
+    },
+    "bonus_pay": {
+      "mean": 9.7,
+      "median": 3.3,
+      "disparity": "Men receiving more in bonus pay than women"
+    },
+    "bonus_distribution": {
+      "men": 94.5,
+      "women": 64.0,
+      "disparity": "Men receiving bonus pay more frequently than women"
+    }
+  }
+}
+`);
     const prompt = PromptTemplate.fromTemplate(AIpromptTemplate);
     console.log("Check point 3");
     const model = new ChatOpenAI({
@@ -61,6 +105,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
     console.log("Check point 5");
     const result = await chain.invoke({
       data: data as string,
+      sample: sample as string,
     });
     console.log("Check point 6");
     // Format the received content
