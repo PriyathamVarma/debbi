@@ -46,11 +46,19 @@ export async function GET(req: NextRequest, res: NextResponse) {
     "bonus_pay": {
       "mean": number indicating the mean,
       "median": number indicating the median,
+      "men_avg_bp": number indicating the men avg bonus pay,
+      "women_avg_bp": number indicating the women avg bonus pay,
+      "men_median_bp": number indicating the men median bonus pay,
+      "women_median_bp": number indicating the women median bonus pay,
       "disparity": "give the disparity as an insight"
     },
     "bonus_distribution": {
       "men": number indicating the mean,
       "women": number indicating the median,
+      "men_avg_bd": number indicating the men avg bonus pay,
+      "women_avg_bd": number indicating the women avg bonus pay,
+      "men_median_bd": number indicating the men median bonus pay,
+      "women_median_bd": number indicating the women median bonus pay,
       "disparity": "give the disparity as an insight"
     },
     "hourly_pay": {
