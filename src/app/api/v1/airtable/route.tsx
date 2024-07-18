@@ -42,7 +42,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
     // Sample output
     const sample = JSON.stringify(`
 {
-  "gender_pay_gap": {
+  "gpg": {
     "bonus_pay": {
       "mean": number indicating the mean,
       "median": number indicating the median,
